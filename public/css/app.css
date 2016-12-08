@@ -11,6 +11,33 @@
   clear: both;
 }
 
+.content {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.sidebar {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (min-width: 960px) {
+  .sidebar {
+    width: 32.2033898305%;
+    float: right;
+    margin-right: 0;
+  }
+  .content {
+    width: 66.1016949153%;
+    float: left;
+    margin-right: 1.6949152542%;
+  }
+}
+
 body {
   margin: 0;
   padding: 60px 0;
@@ -74,6 +101,7 @@ h5 {
 .article__body {
   font-size: 1.2em;
   font-weight: 400;
+  margin-bottom: 40px;
 }
 
 @media (min-width: 720px) {
@@ -104,6 +132,45 @@ a {
 
 .author__details {
   padding-left: calc(60px + 20px);
+}
+
+.tag {
+  display: inline-block;
+  background: #e5e5e5;
+  text-decoration: none;
+  padding: 5px 15px;
+  font-size: .9em;
+  font-weight: 400;
+  color: #979797;
+  margin-right: 5px;
+}
+
+.post {
+  margin-bottom: 60px;
+}
+
+.post__header {
+  font-size: 1.4em;
+  font-weight: 800;
+}
+
+.post__author {
+  font-size: .9em;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.post__author a {
+  font-weight: 400;
+}
+
+.post__time {
+  margin-left: 10px;
+}
+
+.post__preview {
+  font-size: 1em;
+  font-weight: 400;
 }
 
 

@@ -11,6 +11,14 @@
 |
 */
 
+Route::get('/', function() {
+	return view('home');
+});
+
 Route::get('/post', function () {
     return view('post.post');
+});
+
+Route::get('/post/{tag}', function() {
+	return view('home');
 });
