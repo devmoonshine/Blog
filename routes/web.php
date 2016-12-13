@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function() {
-	return view('home');
-});
+Route::get('/', [
+	'as' => 'home',
+	'uses' => 'PostsController@index'
+]);
 
 Route::get('/post/{post}', [
 	'as' => 'post.show',
