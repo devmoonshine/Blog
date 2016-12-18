@@ -23,7 +23,8 @@
 		<div class="article__body">
 			{{ $post->body }}
 		</div>
-		<a href="#" class="tag">Coding</a>
-		<a href="#" class="tag">Education</a>
+		@foreach($post->tags as $tag)
+			<a href="{{ route('posts.tagged', $tag->slug) }}" class="tag">{{ $tag->name }}</a>
+		@endforeach
 	</article>
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Tag;
 
 class PostsController extends Controller
 {
@@ -11,5 +12,12 @@ class PostsController extends Controller
     	return view('home')->with([
     			'posts' => $post->latestFirst()->get()
     		]);
+    }
+
+    public function tagged(Tag $tag) {
+        return view('post.tag')->with([
+            'posts' => $tag->posts()->latestFirst()->get(),
+            'tag'   => $tag
+        ]);
     }
 }

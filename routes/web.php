@@ -24,3 +24,8 @@ Route::get('/post/{post}', [
 Route::get('/post/{tag}', function() {
 	return view('home');
 });
+
+Route::get('/posts/{tag}', [
+    'as' => 'posts.tagged',
+    'uses' => 'PostsController@tagged'
+]);
