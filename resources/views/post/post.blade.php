@@ -21,7 +21,7 @@
 			{{ $post->teaser }}
 		</h2>
 		<div class="article__body">
-			{{ $post->body }}
+            {!! Markdown::convertToHtml(e($post->body)) !!}
 		</div>
 		@foreach($post->tags as $tag)
 			<a href="{{ route('posts.tagged', $tag->slug) }}" class="tag">{{ $tag->name }}</a>
