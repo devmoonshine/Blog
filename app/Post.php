@@ -17,13 +17,17 @@ class Post extends Model
      *
      * @return string
      */
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
+//    public function getRouteKeyName()
+//    {
+//        return 'slug';
+//    }
 
     public function scopeLatestFirst($query) {
         return $query->orderBy('created_at', 'desc');
+    }
+
+    public function scopeIsLive($query) {
+        return $query->where('live', true);
     }
 
     public function tags() {

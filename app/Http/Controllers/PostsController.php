@@ -10,13 +10,13 @@ class PostsController extends Controller
 {
     public function index(Post $post) {
     	return view('home')->with([
-    			'posts' => $post->latestFirst()->get()
+    			'posts' => $post->latestFirst()->isLive()->get()
     		]);
     }
 
     public function tagged(Tag $tag) {
         return view('post.tag')->with([
-            'posts' => $tag->posts()->latestFirst()->get(),
+            'posts' => $tag->posts()->latestFirst()->isLive()->get(),
             'tag'   => $tag
         ]);
     }
